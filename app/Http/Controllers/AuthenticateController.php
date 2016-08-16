@@ -12,8 +12,7 @@ class AuthenticateController extends Controller
 {
     public function index()
     {
-        // TODO: show users
-        return response()->json(['message' => 'Username and password required to recieve token']);
+        return response()->json(['message' => 'Username and password required for token']);
     }    
   
     public function authenticate(Request $request)

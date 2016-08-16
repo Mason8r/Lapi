@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'api', 'middleware' => ['api']], function() {
-    Route::get('authenticate', 'AuthenticateController@index');
+
     Route::post('authenticate', 'AuthenticateController@authenticate');
+
+    Route::group(['prefix' => 'users'], function() {
+        Route::get('/', 'UsersController@index');
+    });
+
 });

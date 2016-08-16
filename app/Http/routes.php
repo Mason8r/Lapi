@@ -10,12 +10,15 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::group(['prefix' => 'api', 'middleware' => ['api']], function() {
+
+    Route::get('/', function () {
+        return response()->json(['message' => 'Welcome to the Errands API']);
+    });
 
     Route::post('authenticate', 'AuthenticateController@authenticate');
 

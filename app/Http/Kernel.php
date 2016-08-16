@@ -28,6 +28,10 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+
+        ],
+        
+        'csrf' => [
             \App\Http\Middleware\VerifyCsrfToken::class,
         ],
 
@@ -49,5 +53,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'jwt.auth' => Tymon\JWTAuth\MiddlewareGetUserFromToken::class,
+        'jwt.refresh' => TymonJWTAuth\MiddlewareRefreshToken::class,
     ];
 }

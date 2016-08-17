@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::group(['prefix' => 'api', 'middleware' => ['api']], function() {
@@ -27,3 +27,4 @@ Route::group(['prefix' => 'api', 'middleware' => ['api']], function() {
     });
 
 });
+
